@@ -18,6 +18,7 @@ public class HospitalManager : MonoBehaviour
     private float timer;
     private GameObject tips;
     private float speed=70f;
+    public GameObject mask;
     private void Awake()
     {
         contentList = new List<string>();
@@ -33,28 +34,7 @@ public class HospitalManager : MonoBehaviour
     }
     private void Update()
     {
-        /*
-        if (Time.time - timer <= interval+0.1f)
-        {
-            tips.SetActive(false);
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                cursor = currentContent.Length;
-                tips.SetActive(true);
-                content.text = currentContent.Substring(0, cursor);
-                interval = -0.2f;
-            }
-            else if (cursor <= currentContent.Length)
-            {
-                cursor = (int)(Mathf.Min((Time.time - timer) / interval,1) * currentContent.Length);
-                if (cursor == currentContent.Length)
-                {
-                    tips.SetActive(true);
-                }
-                content.text = currentContent.Substring(0, cursor);
-            }
-            
-        }*/
+
         if (cursor < currentContent.Length)
         {
             tips.SetActive(false);
@@ -92,9 +72,16 @@ public class HospitalManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(1);
+            mask.SetActive(true);
+            StartCoroutine(LoadNextScence());
+            
         }
 
+    }
+    IEnumerator LoadNextScence()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(1);
     }
     private void AddContent()
     {
