@@ -62,7 +62,7 @@ public class SchoolOutManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
     }
     private void AddContent()
