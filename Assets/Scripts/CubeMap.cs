@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class CubeMap : MonoBehaviour
 {
@@ -10,11 +11,11 @@ public class CubeMap : MonoBehaviour
     private float y = 0;
     public float rotateSpeed = 0;
     // Start is called before the first frame update
-    public GameObject tips;
     private bool tipsFlag;
     public int index;
     public GameObject mask;
     public List<bool> isBook;
+    public GameObject bg;
 
     // Update is called once per frame
     void Update()
@@ -29,7 +30,6 @@ public class CubeMap : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.T))
         {
-            tips.gameObject.SetActive(tipsFlag);
             tipsFlag = !tipsFlag;
         }
     }
@@ -116,5 +116,18 @@ public class CubeMap : MonoBehaviour
     public void ShowMask()
     {
         mask.SetActive(true);
+    }
+
+    public void CheckGame()
+    {
+        foreach (var item in isBook)
+        {
+            if (item == false) return;
+        }
+        Win();
+    }
+    private void Win()
+    {
+        bg.SetActive(true);
     }
 }

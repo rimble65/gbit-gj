@@ -15,5 +15,6 @@ public class Book : MonoBehaviour
         cubeMap.isBook[cubeMap.index] = true;
         mask.SetActive(false);
         Destroy(gameObject);
+        cubeMap.CheckGame();
     }
 }

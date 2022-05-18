@@ -12,18 +12,24 @@ EditorBuildSettings:
     path: Assets/Scenes/SchoolOut.unity
     guid: cd54dcbd0002d4234878d4702ea3756e
   - enabled: 0
-    path: Assets/Scenes/HospitalSecond.unity
-    guid: 033c4c5a3b644426ab7230234be25adb
+    path: Assets/Scenes/Hospital2.unity
+    guid: fe339fed049ff45b7a00574b09adacf8
   - enabled: 0
     path: Assets/Scenes/maze.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
-    path: Assets/Scenes/Maomao.unity
-    guid: 73438681be9f14655b61f7b7891c7e08
+    path: Assets/Scenes/WorkScene.unity
+    guid: 55e05ea4595c647f3aded1b2c58cd328
   - enabled: 0
-    path: Assets/Scenes/Book.unity
-    guid: e1416b9a5944b48cea395bfa194d2826
-  - enabled: 1
-    path: Assets/Scenes/Test.unity
+    path: Assets/Scenes/MaoMao.unity
     guid: 96acc03ee375e4e38b3fab941f0a7dce
+  - enabled: 0
+    path: Assets/Scenes/BookScene.unity
+    guid: cbcfe3920cb1e4ed18e8ee48143cb9c9
+  - enabled: 0
+    path: Assets/Scenes/FishScene.unity
+    guid: 35d7aff8a83934f629d78516205470e4
+  - enabled: 0
+    path: Assets/Scenes/ThirdDotThree.unity
+    guid: b895e9eb2b14349ac929ddfdb8bfadfe
   m_configObjects: {}

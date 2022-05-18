@@ -15,6 +15,8 @@ public class SchoolOutManager : MonoBehaviour
     private GameObject tips;
     private float speed = 70f;
     private bool isLoadScene;
+
+    public GameObject classImg;
     private void Awake()
     {
         contentList = new List<string>();
@@ -56,13 +58,17 @@ public class SchoolOutManager : MonoBehaviour
         if (pageIndex < contentList.Count - 1)
         {
             pageIndex++;
+            if (pageIndex == 12)
+            {
+                classImg.SetActive(true);
+            }
             currentContent = contentList[pageIndex];
             timer = Time.time;
             cursor = 0;
         }
         else
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
         }
     }
     private void AddContent()
