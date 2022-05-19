@@ -6,30 +6,45 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Hospital.unity
+    path: Assets/Scenes/First/Hospital.unity
     guid: 3329dc835a8f44386b159b63b7c37b06
   - enabled: 0
-    path: Assets/Scenes/SchoolOut.unity
+    path: Assets/Scenes/First/SchoolOut.unity
     guid: cd54dcbd0002d4234878d4702ea3756e
   - enabled: 0
-    path: Assets/Scenes/Hospital2.unity
+    path: Assets/Scenes/First/Hospital2.unity
     guid: fe339fed049ff45b7a00574b09adacf8
   - enabled: 0
-    path: Assets/Scenes/maze.unity
+    path: Assets/Scenes/First/maze.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
-    path: Assets/Scenes/WorkScene.unity
+    path: Assets/Scenes/Two/WorkScene.unity
     guid: 55e05ea4595c647f3aded1b2c58cd328
   - enabled: 0
-    path: Assets/Scenes/MaoMao.unity
+    path: Assets/Scenes/Two/MaoMao.unity
     guid: 96acc03ee375e4e38b3fab941f0a7dce
   - enabled: 0
-    path: Assets/Scenes/BookScene.unity
+    path: Assets/Scenes/Two/BookScene.unity
     guid: cbcfe3920cb1e4ed18e8ee48143cb9c9
   - enabled: 0
-    path: Assets/Scenes/FishScene.unity
+    path: Assets/Scenes/Two/FishScene.unity
     guid: 35d7aff8a83934f629d78516205470e4
   - enabled: 0
-    path: Assets/Scenes/ThirdDotThree.unity
+    path: Assets/Scenes/Third/ThirdScene.unity
+    guid: 315621235ea9b44e38b999e58464f9fd
+  - enabled: 0
+    path: Assets/Scenes/Third/ThirdDotTwo.unity
+    guid: 006b2c24963fe4a528f9152c5dbe38bf
+  - enabled: 0
+    path: Assets/Scenes/Third/ThirdDotThree.unity
     guid: b895e9eb2b14349ac929ddfdb8bfadfe
+  - enabled: 0
+    path: Assets/Scenes/Third/ThirdDotFour.unity
+    guid: b6f8e0fb249304fdba85cae1c267cb30
+  - enabled: 0
+    path: Assets/Scenes/Third/ThirdDotFive.unity
+    guid: 8055c59fb0882438b9ca06abc3356113
+  - enabled: 1
+    path: Assets/Scenes/Four/FourDotOne.unity
+    guid: 1435574183b2845f7bebcfd626c27bc2
   m_configObjects: {}
