@@ -362,6 +362,7 @@ MonoBehaviour:
   - {fileID: 2063864478}
   - {fileID: 1697077874}
   canvas: {fileID: 0}
+  nextScene: 8
 --- !u!4 &104779385
 Transform:
   m_ObjectHideFlags: 0

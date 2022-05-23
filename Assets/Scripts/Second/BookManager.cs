@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 public class BookManager : MonoBehaviour
 {
     public List<Button> buttons;
-    public Dictionary<Image, bool> stringDic;
     public List<Image> images;
     public GameObject player;
     private Dictionary<Button, int> dic;
@@ -24,7 +23,6 @@ public class BookManager : MonoBehaviour
 
     private void Awake()
     {
-        stringDic = new Dictionary<Image, bool>();
         dic = new Dictionary<Button, int>();
         InitDic();
         restart.onClick.AddListener(Restart);
@@ -40,10 +38,6 @@ public class BookManager : MonoBehaviour
     //字典和按钮的点击事件初始化
     private void InitDic()
     {
-        for (int i = 0; i < images.Count; i++)
-        {
-            stringDic.Add(images[i], false);
-        }
         for (int i = 0; i < buttons.Count; i++)
         {
             buttons[i].onClick.AddListener(OnButtonClick);
@@ -86,10 +80,10 @@ public class BookManager : MonoBehaviour
     //检查是否胜利
     private void CheckGame()
     {
-        foreach (var item in stringDic)
+        foreach (var item in stringList)
         {
 
-            if (item.Value == false)
+            if (item.flag == false)
             {
                 return;
             }
@@ -125,7 +119,6 @@ public class BookManager : MonoBehaviour
         }
         for (int i = 0; i < images.Count; i++)
         {
-            stringDic[images[i]] = false;
             stringList[i].flag = false;
         }
     }
@@ -137,7 +130,7 @@ public class BookManager : MonoBehaviour
         switch (pre)
         {
             case 0:
-                if (q == 1 || q == 5 ) return true;
+                if (q == 1 || q == 4 ) return true;
                 else return false;
             case 1:
                 if (q == 2 || q == 0 || q ==4 || q ==5 || q ==6) return true;

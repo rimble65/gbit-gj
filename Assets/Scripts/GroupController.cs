@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GroupController : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class GroupController : MonoBehaviour
     public List<Word> falWords;
     public List<GameObject> imgList;
     public int index;
-
+    public int nextScene;
     private void Awake()
     {
         ResetWord();
@@ -25,7 +26,7 @@ public class GroupController : MonoBehaviour
         {
             if (item.flag == true) return;
         }
-        Debug.Log("win");
+        SceneManager.LoadScene(nextScene);
         return;
     }
     public void ReStartGame()

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class FishManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class FishManager : MonoBehaviour
     public Button restart;
     public List<FishStringManager> stringList;
     public GameObject canvas;
+    public int nextScene;
 
     private void Awake()
     {
@@ -86,10 +88,10 @@ public class FishManager : MonoBehaviour
     //检查是否胜利
     private void CheckGame()
     {
-        foreach (var item in stringDic)
+        foreach (var item in stringList)
         {
 
-            if (item.Value == false)
+            if (item.flag == false)
             {
                 return;
             }
@@ -102,6 +104,7 @@ public class FishManager : MonoBehaviour
         result.DOColor(new Color(1, 1, 1, 1), 3f).OnComplete(() =>
         {
             canvas.SetActive(true);
+            SceneManager.LoadScene(nextScene);
         });
     }
     //游戏失败

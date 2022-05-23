@@ -21,6 +21,7 @@ public class ThirdDotFive : MonoBehaviour
     private GameObject tips;
     private float speed = 70f;
     public GameObject mask;
+    public int nextScene;
     private void Awake()
     {
         contentList = new List<string>();
@@ -87,7 +88,7 @@ public class ThirdDotFive : MonoBehaviour
     IEnumerator LoadNextScence()
     {
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene(13);
+        SceneManager.LoadScene(nextScene);
     }
     private void AddContent()
     {

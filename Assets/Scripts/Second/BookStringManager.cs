@@ -27,7 +27,6 @@ public class BookStringManager : MonoBehaviour
             flag = true;
             Image img = transform.GetComponent<Image>();
             img.DOColor(new Color(1, 1, 1, 1), 1f);
-            manager.stringDic[img] = true;
         }
     }
 }

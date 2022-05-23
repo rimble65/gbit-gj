@@ -52,7 +52,7 @@ public class PaintCanvas : MonoBehaviour
             if (cursor == currentContent.Length) tips.SetActive(true);
             content.text = currentContent.Substring(0, cursor);
         }
-        else if (Input.GetKeyDown(KeyCode.G))
+        else if (Input.GetKeyDown(KeyCode.K))
         {
             Turn();
         }

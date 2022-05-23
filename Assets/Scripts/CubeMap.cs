@@ -20,17 +20,13 @@ public class CubeMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             TurnCubeLeft();
         }
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.H))
         {
             TurnCubeRight();
-        }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            tipsFlag = !tipsFlag;
         }
     }
 

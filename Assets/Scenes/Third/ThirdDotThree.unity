@@ -2432,6 +2432,7 @@ MonoBehaviour:
   - {fileID: 2141188764}
   - {fileID: 2055282537}
   index: 2
+  nextScene: 12
 --- !u!114 &313962778
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class GroupControllerSec : MonoBehaviour
 {
     public List<WordSec> words;
     public List<WordSec> falWords;
     public List<GameObject> imgList;
     public int index;
-
+    public int nextScene;
     private void Awake()
     {
         ResetWord();
@@ -25,7 +25,7 @@ public class GroupControllerSec : MonoBehaviour
         {
             if (item.flag == true) return;
         }
-        Debug.Log("win");
+        SceneManager.LoadScene(nextScene);
         return;
     }
 
