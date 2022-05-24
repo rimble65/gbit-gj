@@ -32,6 +32,7 @@ public class CubeMap : MonoBehaviour
 
     public void TurnCubeLeft()
     {
+        player.gameObject.SetActive(false);
         index++;
         if (index > 3) index = 0;
         if (isBook[index] == false)
@@ -45,11 +46,13 @@ public class CubeMap : MonoBehaviour
         y += 90;
         transform.DOLocalRotate(new Vector3(0, y, 0), rotateSpeed);
         StartCoroutine(HideSide());
-        player.transform.DOLocalMoveX(player.transform.localPosition.x - 10,rotateSpeed);
+        StartCoroutine(PlayerMoveRight());
+        //player.transform.DOLocalMoveX(player.transform.localPosition.x - 10,rotateSpeed);
+        
     }
     public void TurnCubeRight()
     {
-
+        player.gameObject.SetActive(false);
         index--;
         if (index < 0) index = 3;
         if (isBook[index] == false)
@@ -61,9 +64,23 @@ public class CubeMap : MonoBehaviour
             HideMask();
         }
         StartCoroutine(HideSide());
+        StartCoroutine(PlayerMoveLeft());
         y -= 90;
         transform.DOLocalRotate(new Vector3(0, y, 0), rotateSpeed);
-        player.transform.DOLocalMoveX(player.transform.localPosition.x + 10, rotateSpeed);
+        //player.transform.DOLocalMoveX(player.transform.localPosition.x + 10, rotateSpeed);
+        
+    }
+    IEnumerator PlayerMoveRight()
+    {
+        yield return new WaitForSeconds(.8f);
+        player.transform.localPosition = new Vector3(player.transform.localPosition.x - 9.5f, player.transform.localPosition.y, player.transform.localPosition.z);
+        player.gameObject.SetActive(true);
+    }
+    IEnumerator PlayerMoveLeft()
+    {
+        yield return new WaitForSeconds(.8f);
+        player.transform.localPosition = new Vector3(player.transform.localPosition.x + 9.5f, player.transform.localPosition.y, player.transform.localPosition.z);
+        player.gameObject.SetActive(true);
     }
     IEnumerator HideSide()
     {
