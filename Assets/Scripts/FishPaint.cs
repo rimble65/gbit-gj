@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
-
+using DG.Tweening;
 public class FishPaint : MonoBehaviour
 {
     private TMP_Text content;
@@ -19,6 +19,7 @@ public class FishPaint : MonoBehaviour
     private GameObject tips;
     private float speed = 70f;
     public GameObject mask;
+    public int nextScene;
     private void Awake()
     {
         contentList = new List<string>();
@@ -31,6 +32,7 @@ public class FishPaint : MonoBehaviour
 
         currentContent = contentList[0];
         timer = Time.time;
+
     }
     private void Update()
     {
@@ -50,7 +52,7 @@ public class FishPaint : MonoBehaviour
             if (cursor == currentContent.Length) tips.SetActive(true);
             content.text = currentContent.Substring(0, cursor);
         }
-        else if (Input.GetKeyDown(KeyCode.G))
+        else if (Input.GetKeyDown(KeyCode.K))
         {
             Turn();
         }
@@ -65,7 +67,7 @@ public class FishPaint : MonoBehaviour
     IEnumerator LoadNextScence()
     {
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(nextScene);
     }
     private void AddContent()
     {

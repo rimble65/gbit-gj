@@ -22,7 +22,7 @@ public class FishManager : MonoBehaviour
     public Button restart;
     public List<FishStringManager> stringList;
     public GameObject canvas;
-    public int nextScene;
+    public GameObject secondHun;
 
     private void Awake()
     {
@@ -103,8 +103,12 @@ public class FishManager : MonoBehaviour
     {
         result.DOColor(new Color(1, 1, 1, 1), 3f).OnComplete(() =>
         {
-            canvas.SetActive(true);
-            SceneManager.LoadScene(nextScene);
+            secondHun.GetComponent<Image>().DOColor(new Color(1, 1, 1, 1), 3f).OnComplete(()=>
+            {
+                result.color = new Color(1, 1, 1, 0);
+                canvas.SetActive(true);
+            });
+
         });
     }
     //游戏失败

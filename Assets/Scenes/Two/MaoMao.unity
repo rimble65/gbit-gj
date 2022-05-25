@@ -4509,6 +4509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mask: {fileID: 1690680422992110568}
+  nextScene: 7
 --- !u!1 &3780118791560059680
 GameObject:
   m_ObjectHideFlags: 0

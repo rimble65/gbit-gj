@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/First/Pv.unity
+    guid: ad9c52c87097a4b7685bca9b16e9c982
+  - enabled: 1
     path: Assets/Scenes/First/Hospital.unity
     guid: 3329dc835a8f44386b159b63b7c37b06
   - enabled: 1

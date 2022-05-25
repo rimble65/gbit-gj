@@ -22,6 +22,7 @@ public class WorkSceneManager : MonoBehaviour
     private float speed = 70f;
     public GameObject mask;
     public GameObject newBg;
+    public int nextScene;
     private void Awake()
     {
         contentList = new List<string>();
@@ -89,7 +90,7 @@ public class WorkSceneManager : MonoBehaviour
     IEnumerator LoadNextScence()
     {
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(nextScene);
     }
     private void AddContent()
     {

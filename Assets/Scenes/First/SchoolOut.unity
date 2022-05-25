@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b021aacb430374a2485da07ec9774b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: 3
   classImg: {fileID: 650557788}
 --- !u!1 &650557788
 GameObject:

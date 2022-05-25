@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CubeMap : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class CubeMap : MonoBehaviour
     public GameObject mask;
     public List<bool> isBook;
     public GameObject bg;
+    public GameObject firstHun;
 
     // Update is called once per frame
     void Update()
@@ -141,6 +143,10 @@ public class CubeMap : MonoBehaviour
     }
     private void Win()
     {
-        bg.SetActive(true);
+        firstHun.GetComponent<Image>().DOColor(new Color(1, 1, 1, 1), 3f).OnComplete(() =>
+        {
+            bg.SetActive(true);
+        });
+        
     }
 }

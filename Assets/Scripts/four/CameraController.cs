@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
     public GameObject player;
     private float distance;
     public GameObject losePanel;
+    public int nextScene;
     private void Awake()
     {
         initPos = transform.position;
@@ -64,6 +65,6 @@ public class CameraController : MonoBehaviour
     }
     public void WinGame()
     {
-        SceneManager.LoadScene(15);
+        SceneManager.LoadScene(nextScene);
     }
 }

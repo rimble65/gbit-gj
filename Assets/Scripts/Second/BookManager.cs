@@ -19,6 +19,7 @@ public class BookManager : MonoBehaviour
     public GameObject hint;
     public List<BookBowl> bowlList;
     public Button restart;
+    public int nextScene;
     public List<BookStringManager> stringList;
 
     private void Awake()
@@ -95,7 +96,7 @@ public class BookManager : MonoBehaviour
     {
         result.DOColor(new Color(1, 1, 1, 1), 3f).OnComplete(() =>
         {
-            SceneManager.LoadScene(7);
+            SceneManager.LoadScene(nextScene);
         });
     }
     //游戏失败

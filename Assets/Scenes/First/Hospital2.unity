@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mask: {fileID: 666620131}
+  nextScene: 4
 --- !u!1 &666620131 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2522911756782863558, guid: 482872625fa0c4aad828f452d2a75b73, type: 3}

@@ -19,6 +19,7 @@ public class HospitalSecond : MonoBehaviour
     private GameObject tips;
     private float speed = 70f;
     public GameObject mask;
+    public int nextScene;
     private void Awake()
     {
         contentList = new List<string>();
@@ -81,7 +82,7 @@ public class HospitalSecond : MonoBehaviour
     IEnumerator LoadNextScence()
     {
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(nextScene);
     }
     private void AddContent()
     {

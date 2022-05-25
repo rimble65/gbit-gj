@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class FourDotTwo : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class FourDotTwo : MonoBehaviour
     private float speed = 70f;
     public GameObject mask;
     public int nextScene;
+    public GameObject fourHun;
     private void Awake()
     {
         contentList = new List<string>();
@@ -68,6 +70,10 @@ public class FourDotTwo : MonoBehaviour
         if (pageIndex < contentList.Count - 1)
         {
             pageIndex++;
+            if (pageIndex == contentList.Count - 2)
+            {
+                fourHun.GetComponent<Image>().DOColor(new Color(1, 1, 1, 1), 3f);
+            }
             currentContent = contentList[pageIndex];
             timer = Time.time;
             cursor = 0;

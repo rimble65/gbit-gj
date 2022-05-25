@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask: {fileID: 1009848465}
   newBg: {fileID: 1643837870}
+  nextScene: 6
 --- !u!224 &666620132 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2522911756782863561, guid: 482872625fa0c4aad828f452d2a75b73, type: 3}

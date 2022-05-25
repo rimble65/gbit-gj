@@ -5006,6 +5006,7 @@ MonoBehaviour:
   endPos: {fileID: 1425163706}
   player: {fileID: 1007777904}
   losePanel: {fileID: 92229641}
+  nextScene: 17
 --- !u!1 &1037111144
 GameObject:
   m_ObjectHideFlags: 0

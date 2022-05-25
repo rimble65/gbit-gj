@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 public class GroupControllerSec : MonoBehaviour
 {
     public List<WordSec> words;
@@ -10,6 +11,7 @@ public class GroupControllerSec : MonoBehaviour
     public List<GameObject> imgList;
     public int index;
     public int nextScene;
+    public GameObject thirdHun;
     private void Awake()
     {
         ResetWord();
@@ -25,7 +27,11 @@ public class GroupControllerSec : MonoBehaviour
         {
             if (item.flag == true) return;
         }
-        SceneManager.LoadScene(nextScene);
+        thirdHun.GetComponent<Image>().DOColor(new Color(1, 1, 1, 1), 3f).OnComplete(() =>
+        {
+            SceneManager.LoadScene(nextScene);
+        });
+        
         return;
     }
 

@@ -531,6 +531,7 @@ MonoBehaviour:
   - {fileID: 1799075004}
   - {fileID: 1390025235}
   restart: {fileID: 250074200}
+  nextScene: 8
   stringList:
   - {fileID: 1628668626}
   - {fileID: 718360956}

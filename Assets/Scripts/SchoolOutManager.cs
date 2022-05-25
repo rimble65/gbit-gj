@@ -15,7 +15,7 @@ public class SchoolOutManager : MonoBehaviour
     private GameObject tips;
     private float speed = 70f;
     private bool isLoadScene;
-
+    public int nextScene;
     public GameObject classImg;
     private void Awake()
     {
@@ -68,7 +68,7 @@ public class SchoolOutManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(nextScene);
         }
     }
     private void AddContent()

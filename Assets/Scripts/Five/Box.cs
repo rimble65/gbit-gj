@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class Box : MonoBehaviour
 {
     public LayerMask layer;
     public int nextScene;
+    public GameObject fiveHun;
     public bool CanMoveToDir(Vector2 dir)
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position ,dir ,144,layer);
@@ -20,7 +23,10 @@ public class Box : MonoBehaviour
             if (hit.collider.name == "End")
             {
                 MoveToDir(dir);
-                SceneManager.LoadScene(nextScene);
+                fiveHun.GetComponent<Image>().DOColor(new Color(1, 1, 1, 1), 3f).OnComplete(()=> {
+                    SceneManager.LoadScene(nextScene);
+                });
+                
             }
         }
 
