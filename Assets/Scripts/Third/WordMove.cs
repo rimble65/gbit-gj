@@ -14,10 +14,10 @@ public class WordMove : MonoBehaviour
         initPos = transform.localPosition;
         #region list
         topList = new List<List<int>>();
-        topList.Add(new List<int> { -290, 116 });
-        topList.Add(new List<int> { -247, 116 });
-        topList.Add(new List<int> { -204, 116 });
-        topList.Add(new List<int> { -170, 116 });
+        topList.Add(new List<int> { -290, 106 });
+        topList.Add(new List<int> { -247, 106 });
+        topList.Add(new List<int> { -204, 106 });
+        topList.Add(new List<int> { -170, 106 });
         topList.Add(new List<int> { -118, -13 });
         topList.Add(new List<int> { -290, -56 });
         topList.Add(new List<int> { -75, 73 });
@@ -36,10 +36,10 @@ public class WordMove : MonoBehaviour
         leftList.Add(new List<int> { -118, -99 });
         leftList.Add(new List<int> { -247,-13 });
         leftList.Add(new List<int> { -247, 30 });
-        leftList.Add(new List<int> { -118, 159 });
+        leftList.Add(new List<int> { -118, 140 });
 
         rightList = new List<List<int>>();
-        rightList.Add(new List<int> { -333, 160 });
+        rightList.Add(new List<int> { -333, 140 });
         rightList.Add(new List<int> { -118, 116 });
         rightList.Add(new List<int> { -161, 73 });
         rightList.Add(new List<int> { -161, 30 });
@@ -51,11 +51,11 @@ public class WordMove : MonoBehaviour
         rightList.Add(new List<int> { -32, -99 });
 
         bottomList = new List<List<int>>();
-        bottomList.Add(new List<int> { -161, 202 });
-        bottomList.Add(new List<int> { -204, 202 });
-        bottomList.Add(new List<int> { -247, 202 });
-        bottomList.Add(new List<int> { -290, 202 });
-        bottomList.Add(new List<int> { -75, 160 });
+        bottomList.Add(new List<int> { -161, 180 });
+        bottomList.Add(new List<int> { -204, 180 });
+        bottomList.Add(new List<int> { -247, 180 });
+        bottomList.Add(new List<int> { -290, 180 });
+        bottomList.Add(new List<int> { -75, 140 });
         bottomList.Add(new List<int> { -118, 116 });
         bottomList.Add(new List<int> { -290, 73 });
         bottomList.Add(new List<int> { -247, -56 });
@@ -81,8 +81,8 @@ public class WordMove : MonoBehaviour
 
                     }
                 }
-                if (transform.localPosition.y >= 190) return;
-                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y+43, transform.localPosition.z);
+                if (transform.localPosition.y >= 175) return;
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y+38, transform.localPosition.z);
             }
             else if (Input.GetKeyDown(KeyCode.A))
             {
@@ -92,8 +92,8 @@ public class WordMove : MonoBehaviour
                     if (Mathf.Abs(transform.localPosition.x - item[0]) < 20 && Mathf.Abs(transform.localPosition.y - item[1]) < 20) return;
                 }
 
-                if (transform.localPosition.x <= -320) return;
-                transform.localPosition = new Vector3(transform.localPosition.x-43, transform.localPosition.y , transform.localPosition.z);
+                if (transform.localPosition.x <= -310) return;
+                transform.localPosition = new Vector3(transform.localPosition.x-41, transform.localPosition.y , transform.localPosition.z);
             }
             else if (Input.GetKeyDown(KeyCode.S))
             {
@@ -103,8 +103,8 @@ public class WordMove : MonoBehaviour
                     if (Mathf.Abs(transform.localPosition.x - item[0]) < 20 && Mathf.Abs(transform.localPosition.y - item[1]) < 20) return;
                 }
 
-                if (transform.localPosition.y <= -180) return;
-                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 43, transform.localPosition.z);
+                if (transform.localPosition.y <= -155) return;
+                transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 38, transform.localPosition.z);
             }
             else if (Input.GetKeyDown(KeyCode.D))
             {
@@ -114,8 +114,8 @@ public class WordMove : MonoBehaviour
                     if (Mathf.Abs(transform.localPosition.x - item[0]) < 20 && Mathf.Abs(transform.localPosition.y - item[1]) < 20) return;
                 }
 
-                if (transform.localPosition.x >= 50) return;
-                transform.localPosition = new Vector3(transform.localPosition.x+43, transform.localPosition.y , transform.localPosition.z);
+                if (transform.localPosition.x >= 40) return;
+                transform.localPosition = new Vector3(transform.localPosition.x+41, transform.localPosition.y , transform.localPosition.z);
             }
     }
     public void ReStart()

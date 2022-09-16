@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/First/maze.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/First/FirstDotfive.unity
+    guid: c8c9ff8fbfa604792a26fb69e7358051
+  - enabled: 1
     path: Assets/Scenes/Two/WorkScene.unity
     guid: 55e05ea4595c647f3aded1b2c58cd328
   - enabled: 1

@@ -35,7 +35,6 @@ public class CubeCanvas : MonoBehaviour
     }
     private void Update()
     {
-
         if (cursor < currentContent.Length)
         {
             tips.SetActive(false);

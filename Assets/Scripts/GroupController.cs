@@ -11,8 +11,21 @@ public class GroupController : MonoBehaviour
     public List<GameObject> imgList;
     public int index;
     public int nextScene;
+    private AudioController ac;
+    private bool tipFlag = true;
+    public GameObject tipPanel;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            tipFlag = !tipFlag;
+            tipPanel.SetActive(tipFlag);
+        }
+    }
     private void Awake()
     {
+        ac = GameObject.Find("AudioSource").GetComponent<AudioController>();
+        ac.PlayThiG();
         ResetWord();
     }
 

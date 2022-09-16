@@ -22,8 +22,11 @@ public class ThirdDotFive : MonoBehaviour
     private float speed = 70f;
     public GameObject mask;
     public int nextScene;
+    private AudioController ac;
     private void Awake()
     {
+        ac = GameObject.Find("AudioSource").GetComponent<AudioController>();
+        ac.PlayThiJ();
         contentList = new List<string>();
         flagList = new List<int>();
         AddContent();

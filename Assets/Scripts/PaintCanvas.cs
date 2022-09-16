@@ -20,6 +20,8 @@ public class PaintCanvas : MonoBehaviour
     private float speed = 70f;
     public GameObject mask;
     public int nextScene;
+
+
     private void Awake()
     {
         contentList = new List<string>();

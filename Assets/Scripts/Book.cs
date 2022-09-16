@@ -6,12 +6,15 @@ public class Book : MonoBehaviour
 {
     public GameObject mask;
     private CubeMap cubeMap;
+    public AudioSource audioSource;
+    public AudioClip ac;
     private void Awake()
     {
         cubeMap = GameObject.Find("CubeMap").GetComponent<CubeMap>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        audioSource.PlayOneShot(ac);
         cubeMap.isBook[cubeMap.index] = true;
         mask.SetActive(false);
         Destroy(gameObject);

@@ -100,7 +100,7 @@ public class ThirdDotTwo : MonoBehaviour
         contentList.Add("（慌忙打断）“快小点声，大街上发什么中二病呢，几个人回头看你呢”"); flagList.Add(3);
         contentList.Add("“你答应我去我就闭嘴！哎呀去不去嘛，去嘛去嘛”"); flagList.Add(1);
         contentList.Add("浔扯住了阿树的衣服"); flagList.Add(-1);
-        contentList.Add("“去去去，祖宗，再扯口袋就要脱了”"); flagList.Add(0);
+        contentList.Add("“去去去，祖宗，再扯口袋就要脱了”"); flagList.Add(3);
         contentList.Add("“诶，你这时候晚上不打工了吗？”"); flagList.Add(2);
         contentList.Add("“当时刚接到消息，我们这届出的新政策，调考排名百分之一的学生可以免赞助费入读高中部，很幸运地免除了六万的学费。”"); flagList.Add(0);
         contentList.Add("“那你日常生活费呢”"); flagList.Add(2);
@@ -111,8 +111,8 @@ public class ThirdDotTwo : MonoBehaviour
         contentList.Add("从书店出来后，浔抱着那本《特朗斯特罗姆诗歌全集》美滋滋地边跳边走，如果她有条尾巴，现在一定已经翘上天了。"); flagList.Add(-1);
         contentList.Add("“阿树啊，想想马上就要读高中了好开心啊”"); flagList.Add(1);
         contentList.Add("“嗯？这有什么开心的”"); flagList.Add(3);
-        contentList.Add("“就是很开心啊，想到又可以跟你在一个教室里上课（突然想到了什么）啊不对...还不一定呢，你都签约了S班了，我才拿了个A约...”"); flagList.Add(2);
-        contentList.Add("如果要跟你一个班，算上那种祖上积德的情况，中考要至少比我这次模考再前进200名...唉，老天爷能不能体谅一下我这个小学渣呀555"); flagList.Add(2);
+        contentList.Add("“就是很开心啊，想到又可以跟你在一个教室里上课（突然想到了什么）啊不对...还不一定呢，你都签约了S班了，我才拿了个A约...”"); flagList.Add(1);
+        contentList.Add("如果要跟你一个班，算上那种祖上积德的情况，中考要至少比我这次模考再前进200名...唉，老天爷能不能体谅一下我这个小学渣呀555"); flagList.Add(1);
         contentList.Add("“（被逗笑了）我们小浔什么时候成了个妄自菲薄的学渣了？你已经很棒了，只是人往往自己都看不清自己的潜能”"); flagList.Add(3);
         contentList.Add("你不应该在尘埃落定之前就自我否定，还有两个月的时间，只要把化学这个最跛脚的好好攻克，你一定能进S班的"); flagList.Add(3);
         contentList.Add("浔不知是惊讶还是惊喜得张着嘴巴看着阿树，慌忙把手机掏出来飞快打字。"); flagList.Add(-1);

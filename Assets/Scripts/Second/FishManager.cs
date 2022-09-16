@@ -23,9 +23,22 @@ public class FishManager : MonoBehaviour
     public List<FishStringManager> stringList;
     public GameObject canvas;
     public GameObject secondHun;
+    private bool tipFlag = true;
+    public GameObject tipPanel;
 
+    private AudioSource audioSource;
+    public AudioClip audioClip;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            tipFlag = !tipFlag;
+            tipPanel.SetActive(tipFlag);
+        }
+    }
     private void Awake()
     {
+        audioSource = transform.GetComponent<AudioSource>();
         stringDic = new Dictionary<Image, bool>();
         dic = new Dictionary<Button, int>();
         InitDic();
@@ -103,6 +116,7 @@ public class FishManager : MonoBehaviour
     {
         result.DOColor(new Color(1, 1, 1, 1), 3f).OnComplete(() =>
         {
+            audioSource.PlayOneShot(audioClip);
             secondHun.GetComponent<Image>().DOColor(new Color(1, 1, 1, 1), 3f).OnComplete(()=>
             {
                 result.color = new Color(1, 1, 1, 0);

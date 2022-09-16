@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class FiveDotTwo : MonoBehaviour
 {
-    private Text content;
-    //private TMP_Text content;
+    private TMP_Text content;
     private List<string> contentList;
     private List<int> flagList;
     private string currentContent;
@@ -23,13 +23,17 @@ public class FiveDotTwo : MonoBehaviour
     private float speed = 70f;
     public GameObject mask;
     public int nextScene;
+    private AudioController ac;
+    public GameObject end;
+    public GameObject newbg;
     private void Awake()
     {
+        ac = GameObject.Find("AudioSource").GetComponent<AudioController>();
+        ac.PlayFiveJ();
         contentList = new List<string>();
         flagList = new List<int>();
         AddContent();
-        //content = transform.Find("Dialog").Find("Text").GetComponent<TMP_Text>();
-        content = transform.Find("Dialog").Find("Text").GetComponent<Text>();
+        content = transform.Find("Dialog").Find("Text").GetComponent<TMP_Text>();
         maoMao = transform.Find("Mao Mao").gameObject;
         tree = transform.Find("Tree").gameObject;
         theTree = transform.Find("The Tree").gameObject;
@@ -69,6 +73,10 @@ public class FiveDotTwo : MonoBehaviour
     {
         if (pageIndex < contentList.Count - 1)
         {
+            if (pageIndex == contentList.Count - 5)
+            {
+                newbg.SetActive(true);
+            }
             pageIndex++;
             currentContent = contentList[pageIndex];
             timer = Time.time;
@@ -88,8 +96,9 @@ public class FiveDotTwo : MonoBehaviour
     }
     IEnumerator LoadNextScence()
     {
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene(nextScene);
+        yield return new WaitForSeconds(10f);
+        end.SetActive(true);
+        end.transform.DOMoveY(transform.localPosition.y + 540, 7f);
     }
     private void AddContent()
     {

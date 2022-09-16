@@ -21,7 +21,16 @@ public class BookManager : MonoBehaviour
     public Button restart;
     public int nextScene;
     public List<BookStringManager> stringList;
-
+    private bool tipFlag = true;
+    public GameObject tipPanel;
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            tipFlag = !tipFlag;
+            tipPanel.SetActive(tipFlag);
+        }
+    }
     private void Awake()
     {
         dic = new Dictionary<Button, int>();

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class PV : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class PV : MonoBehaviour
     private float speed = 70f;
     public GameObject mask;
     public int nextScene;
+    public GameObject lingjie;
+    public GameObject shin;
     private void Awake()
     {
         contentList = new List<string>();
@@ -65,11 +68,27 @@ public class PV : MonoBehaviour
         {
             //interval = 0.8f;
             pageIndex++;
-            currentContent = contentList[pageIndex];
-            timer = Time.time;
-            cursor = 0;
-            maoMao.SetActive(flagList[pageIndex]==2);
-            theTree.SetActive(flagList[pageIndex] == 0);
+            if (pageIndex == 5)
+            {
+                shin.GetComponent<Image>().DOColor(new Color(1, 1, 1, 1), 2f).OnComplete(() =>
+                {
+                    currentContent = contentList[pageIndex];
+                    timer = Time.time;
+                    cursor = 0;
+                    maoMao.SetActive(flagList[pageIndex] == 2);
+                    theTree.SetActive(flagList[pageIndex] == 0);
+                    lingjie.SetActive(true);
+                    shin.GetComponent<Image>().DOColor(new Color(1, 1, 1, 0), 2f);
+                });
+            }
+            else
+            {
+                currentContent = contentList[pageIndex];
+                timer = Time.time;
+                cursor = 0;
+                maoMao.SetActive(flagList[pageIndex] == 2);
+                theTree.SetActive(flagList[pageIndex] == 0);
+            }
         }
         else
         {

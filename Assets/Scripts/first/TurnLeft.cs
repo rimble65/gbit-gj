@@ -13,7 +13,6 @@ public class TurnLeft : MonoBehaviour
         {
             cm.TurnCubeRight();
             timer = Time.time;
-            Debug.Log(1);
         }
 
     }

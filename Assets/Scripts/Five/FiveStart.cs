@@ -22,8 +22,13 @@ public class FiveStart : MonoBehaviour
     private float speed = 70f;
     public GameObject mask;
     public int nextScene;
+    private AudioController ac;
+    public GameObject newbg;
+    public GameObject newbg2;
     private void Awake()
     {
+        ac = GameObject.Find("AudioSource").GetComponent<AudioController>();
+        ac.PlayFiveJ();
         contentList = new List<string>();
         flagList = new List<int>();
         AddContent();
@@ -68,6 +73,15 @@ public class FiveStart : MonoBehaviour
         if (pageIndex < contentList.Count - 1)
         {
             pageIndex++;
+
+            if (pageIndex == 14)
+            {
+                newbg.SetActive(true);
+            }
+            if (pageIndex == contentList.Count - 7)
+            {
+                newbg2.SetActive(true);
+            }
             currentContent = contentList[pageIndex];
             timer = Time.time;
             cursor = 0;

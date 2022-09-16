@@ -19,8 +19,22 @@ public class MaomaoManager : MonoBehaviour
     private Button preButton;
     public List<StringManager> stringList;
     public GameObject canvas;
+    private AudioController ac;
+    private bool tipFlag = true;
+    public GameObject tipPanel;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            tipFlag = !tipFlag;
+            tipPanel.SetActive(tipFlag);
+        }
+    }
     private void Awake()
     {
+        ac = GameObject.Find("AudioSource").GetComponent<AudioController>();
+        ac.PlayTwoG();
         stringDic = new Dictionary<Image, bool>();
         dic = new Dictionary<Button, int>();
         InitDic();

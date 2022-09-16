@@ -12,6 +12,17 @@ public class GroupControllerSec : MonoBehaviour
     public int index;
     public int nextScene;
     public GameObject thirdHun;
+    private bool tipFlag = true;
+    public GameObject tipPanel;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            tipFlag = !tipFlag;
+            tipPanel.SetActive(tipFlag);
+        }
+    }
     private void Awake()
     {
         ResetWord();

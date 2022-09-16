@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class HospitalManager : MonoBehaviour
 {
+    private AudioController ac;
     private TMP_Text content;
     private List<string> contentList;
     private List<bool> flagList;
@@ -22,6 +23,8 @@ public class HospitalManager : MonoBehaviour
     public int nextScene;
     private void Awake()
     {
+        ac = GameObject.Find("AudioSource").GetComponent<AudioController>();
+        ac.PlayFirJ();
         contentList = new List<string>();
         flagList = new List<bool>();
         AddContent();

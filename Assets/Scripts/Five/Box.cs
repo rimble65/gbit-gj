@@ -10,9 +10,17 @@ public class Box : MonoBehaviour
     public LayerMask layer;
     public int nextScene;
     public GameObject fiveHun;
+    private Vector3 initPos;
+    private AudioSource audioSource;
+    public AudioClip audioClip;
+    private void Awake()
+    {
+        audioSource = transform.GetComponent<AudioSource>();
+        initPos = transform.localPosition;
+    }
     public bool CanMoveToDir(Vector2 dir)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position ,dir ,144,layer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position ,dir ,120,layer);
         if (!hit)
         {
             MoveToDir(dir);
@@ -23,6 +31,7 @@ public class Box : MonoBehaviour
             if (hit.collider.name == "End")
             {
                 MoveToDir(dir);
+                audioSource.PlayOneShot(audioClip);
                 fiveHun.GetComponent<Image>().DOColor(new Color(1, 1, 1, 1), 3f).OnComplete(()=> {
                     SceneManager.LoadScene(nextScene);
                 });
@@ -50,5 +59,9 @@ public class Box : MonoBehaviour
         {
             transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - 120, transform.localPosition.z);
         }
+    }
+    public void ReStart()
+    {
+        transform.localPosition = initPos;
     }
 }

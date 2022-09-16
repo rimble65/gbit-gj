@@ -2,19 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class CameraController : MonoBehaviour
 {
     public float moveSpeed;
     private Vector3 initPos;
     public GameObject endPos;
-    private bool flag;//true 移动到目的地了 false 还没有
+    private bool flag;//true 不动 false dong
     public GameObject player;
     private float distance;
     public GameObject losePanel;
     public int nextScene;
+    private AudioController ac;
+    private bool tipFlag = true;
+    public GameObject tipPanel;
+    public AudioClip audioClip;
     private void Awake()
     {
+        ac = GameObject.Find("AudioSource").GetComponent<AudioController>();
+        ac.PlayFouG();
         initPos = transform.position;
 
     }
@@ -22,7 +30,12 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (flag == false) Move();
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            tipFlag = !tipFlag;
+            tipPanel.SetActive(tipFlag);
+        }
+        if (tipFlag == false) Move();
         if (CheckDistance() == false)
         {
             GameOver();
@@ -38,21 +51,20 @@ public class CameraController : MonoBehaviour
         if (Vector3.Distance(transform.position, endPosition) <= 1f)
         {
             transform.position = endPosition;
-            flag = true;
-            WinGame();
         }
     }
     public void ReStartGames()
     {
+        losePanel.SetActive(false);
+        player.GetComponent<PlayerJump>().ReStart();
         transform.position = initPos;
-        flag = false;
         Time.timeScale = 1;
     }
     public bool CheckDistance()
     {
         distance = transform.position.x - player.transform.position.x;
         Debug.Log(distance);
-        if (distance > 19)
+        if (distance > 21)
         {
             return false;
         }
@@ -64,7 +76,8 @@ public class CameraController : MonoBehaviour
         losePanel.SetActive(true);
     }
     public void WinGame()
-    {
+    {  
         SceneManager.LoadScene(nextScene);
+        
     }
 }

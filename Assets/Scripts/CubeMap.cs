@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class CubeMap : MonoBehaviour
 {
     public List<GameObject> boxList;
+    public Animator ani;
     public GameObject player;
     private float y = 0;
     public float rotateSpeed = 0;
@@ -18,10 +19,25 @@ public class CubeMap : MonoBehaviour
     public List<bool> isBook;
     public GameObject bg;
     public GameObject firstHun;
+    public AudioController ac;
+    private bool tipFlag = true;
+    public GameObject tipPanel;
 
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+    private void Awake()
+    {
+        ac = GameObject.Find("AudioSource").GetComponent<AudioController>();
+        ac.PlayFirG();
+    }
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            tipFlag = !tipFlag;
+            tipPanel.SetActive(tipFlag);
+        }
         if (Input.GetKeyDown(KeyCode.G))
         {
             TurnCubeLeft();
@@ -36,7 +52,9 @@ public class CubeMap : MonoBehaviour
     {
         player.gameObject.SetActive(false);
         index++;
+
         if (index > 3) index = 0;
+        AniTurn();
         if (isBook[index] == false)
         {
             ShowMask();
@@ -56,7 +74,9 @@ public class CubeMap : MonoBehaviour
     {
         player.gameObject.SetActive(false);
         index--;
+        
         if (index < 0) index = 3;
+        AniTurn();
         if (isBook[index] == false)
         {
             ShowMask();
@@ -77,12 +97,14 @@ public class CubeMap : MonoBehaviour
         yield return new WaitForSeconds(.8f);
         player.transform.localPosition = new Vector3(player.transform.localPosition.x - 9.5f, player.transform.localPosition.y, player.transform.localPosition.z);
         player.gameObject.SetActive(true);
+        AniTurn();
     }
     IEnumerator PlayerMoveLeft()
     {
         yield return new WaitForSeconds(.8f);
         player.transform.localPosition = new Vector3(player.transform.localPosition.x + 9.5f, player.transform.localPosition.y, player.transform.localPosition.z);
         player.gameObject.SetActive(true);
+        AniTurn();
     }
     IEnumerator HideSide()
     {
@@ -131,6 +153,7 @@ public class CubeMap : MonoBehaviour
     public void ShowMask()
     {
         mask.SetActive(true);
+        AniTurn();
     }
 
     public void CheckGame()
@@ -143,10 +166,44 @@ public class CubeMap : MonoBehaviour
     }
     private void Win()
     {
+        audioSource.PlayOneShot(audioClip);
         firstHun.GetComponent<Image>().DOColor(new Color(1, 1, 1, 1), 3f).OnComplete(() =>
         {
+            
             bg.SetActive(true);
         });
         
+    }
+    private void AniTurn()
+    {
+        if (index == 0)
+        {
+            
+            ani.SetBool("fir",true);
+            ani.SetBool("sec", false);
+            ani.SetBool("third", false);
+            ani.SetBool("four", false);
+        }
+        else if (index == 1)
+        {
+            ani.SetBool("sec", true);
+            ani.SetBool("fir", false);
+            ani.SetBool("third", false);
+            ani.SetBool("four", false);
+        }
+        else if (index == 2)
+        {
+            ani.SetBool("third", true);
+            ani.SetBool("sec", false);
+            ani.SetBool("fir", false);
+            ani.SetBool("four", false);
+        }
+        else if (index == 3)
+        {
+            ani.SetBool("four", true);
+            ani.SetBool("sec", false);
+            ani.SetBool("third", false);
+            ani.SetBool("fir", false);
+        }
     }
 }

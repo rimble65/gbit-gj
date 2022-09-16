@@ -23,8 +23,11 @@ public class WorkSceneManager : MonoBehaviour
     public GameObject mask;
     public GameObject newBg;
     public int nextScene;
+    private AudioController ac;
     private void Awake()
     {
+        ac = GameObject.Find("AudioSource").GetComponent<AudioController>();
+        ac.PlayTwoJ();
         contentList = new List<string>();
         flagList = new List<int>();
         AddContent();

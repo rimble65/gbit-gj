@@ -22,8 +22,12 @@ public class FourStart : MonoBehaviour
     private float speed = 70f;
     public GameObject mask;
     public int nextScene;
+    private AudioController ac;
+    public GameObject newbg;
     private void Awake()
     {
+        ac = GameObject.Find("AudioSource").GetComponent<AudioController>();
+        ac.PlayFouJ();
         contentList = new List<string>();
         flagList = new List<int>();
         AddContent();
@@ -67,6 +71,10 @@ public class FourStart : MonoBehaviour
     {
         if (pageIndex < contentList.Count - 1)
         {
+            if (pageIndex == contentList.Count - 5)
+            {
+                newbg.SetActive(true);
+            }
             pageIndex++;
             currentContent = contentList[pageIndex];
             timer = Time.time;
